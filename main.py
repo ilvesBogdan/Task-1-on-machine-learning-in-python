@@ -64,7 +64,7 @@ def qestion5(height: int, text: str) -> str:
 def qestion6(arg: str) -> int:
     """Решение задания 6"""
     n = 1
-    for el in map(int, tuple(arg)):
+    for el in map(int, filter(lambda x: x.isdigit(), tuple(arg))):
         if el: n *= el
     return n
 
