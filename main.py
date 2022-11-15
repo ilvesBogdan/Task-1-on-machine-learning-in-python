@@ -1,4 +1,4 @@
-class Qestion1:
+class Question1:
     """Решение задания 1"""
 
     def __init__(self, message):
@@ -9,11 +9,11 @@ class Qestion1:
         self.name = data[0]
         self.surname = data[1] if len(data) > 1 else ''
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f" Hello {self.name} {self.surname}! You just delved into Python. Great start!"
 
 
-def qestion2() -> str:
+def question2() -> str:
     """Решение задания 2"""
     thickness = 5
     c = 'H'
@@ -34,18 +34,18 @@ def qestion2() -> str:
         yield ((c*(thickness-i-1)).rjust(thickness) + c + (c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6)
 
 
-def qestion3(text: str) -> str:
+def question3(text: str) -> str:
     """Решение задания 3"""
     return text.title()
 
 
-def qestion4(amount: float) -> str:
+def question4(amount: float) -> str:
     """Решение задания 4"""
     if (amount > 0):
         return '{:000,.2f}'.format(amount)
 
 
-def qestion5(height: int, text: str) -> str:
+def question5(height: int, text: str) -> str:
     """Решение задания 5"""
     width = height * 3
     data = list()
@@ -61,7 +61,7 @@ def qestion5(height: int, text: str) -> str:
     return '\n'.join(data)
 
 
-def qestion6(arg: str) -> int:
+def question6(arg: str) -> int:
     """Решение задания 6"""
     n = 1
     for el in map(int, filter(lambda x: x.isdigit(), tuple(arg))):
@@ -71,9 +71,9 @@ def qestion6(arg: str) -> int:
 
 if __name__ == '__main__':
 
-    print('\n Задание 1', Qestion1('Введите имя и фамилию: '), sep='\n')
-    print('\n Задание 2', *qestion2(), sep='\n')
-    print('\n Задание 3', qestion3('hello world'), sep='\n')
-    print('\n Задание 4', qestion4(1205760.23), sep='\n')
-    print('\n Задание 5', qestion5(14, 'WELCOME'), sep='\n')
-    print('\n Задание 6', qestion6('123405'), sep='\n')
+    print('\n Задание 1', Question1('Введите имя и фамилию: '), sep='\n')
+    print('\n Задание 2', *question2(), sep='\n')
+    print('\n Задание 3', question3('hello world'), sep='\n')
+    print('\n Задание 4', question4(1205760.23), sep='\n')
+    print('\n Задание 5', question5(14, 'WELCOME'), sep='\n')
+    print('\n Задание 6', question6('123405'), sep='\n')
